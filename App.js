@@ -1,5 +1,9 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, Alert } from "react-native"
+import { View, Text, StyleSheet, Image, TouchableOpacity, ToastAndroid } from "react-native"
+
+const showToaster = () => {
+  ToastAndroid.show("soy un toast!", ToastAndroid.SHORT);
+}
 
 const App = () => {
   return (
@@ -9,7 +13,7 @@ const App = () => {
         source={{uri: 'https://picsum.photos/200/200' }}
         style={style.image}
       />
-      <TouchableOpacity onPress={() => Alert.alert("holi")} style={style.button}>
+      <TouchableOpacity onPress={() => showToaster()} style={style.button}>
         <Text style={style.textButton}>Press me</Text>
       </TouchableOpacity>
     </View>
